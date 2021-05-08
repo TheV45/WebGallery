@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('mainpage');
+// });
+Route::get('/','App\Http\Controllers\ImageController@create');
+
+Route::post('/','App\Http\Controllers\ImageController@store');
+Route::get('/{image}','App\Http\Controllers\ImageController@show');
+Route::post('/{id}','App\Http\Controllers\ImageController@deleteImage');
